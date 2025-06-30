@@ -1,0 +1,1 @@
+export const isCorrectResponse = (status: number): boolean => [200, 201, 204].includes(status);

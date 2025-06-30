@@ -1,0 +1,27 @@
+.v-card {
+  backdrop-filter: blur(10px);
+  background: rgba(var(--v-theme-surface), 0.95);
+}
+
+.v-text-field {
+  transition: all 0.3s ease;
+}
+
+.v-text-field:hover {
+  transform: translateY(-2px);
+}
+
+.v-btn {
+  transition: all 0.3s ease;
+}
+
+.v-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .v-text-field:hover,
+  .v-btn:hover {
+    transform: none;
+  }
+}
