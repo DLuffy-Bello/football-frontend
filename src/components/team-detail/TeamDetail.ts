@@ -1,7 +1,6 @@
 import { defineComponent, computed, onMounted, onUnmounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useTeamsStore } from '../../stores/teams'
-import { useLoadingStore } from '../../stores/loading'
 import ModalList from '../common/ModalList.vue'
 
 
@@ -14,10 +13,8 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
     const teamsStore = useTeamsStore()
-    const loadingStore = useLoadingStore()
     const modalPlayers = ref(false);
     const team = computed(() => teamsStore.currentTeam)
-    const isLoading = computed(() => loadingStore.isLoading)
     const error = computed(() => teamsStore.error)
     
     const goBack = (): void => {
@@ -30,10 +27,6 @@ export default defineComponent({
         month: 'long',
         day: 'numeric'
       })
-    }
-    
-    const getAreaIcon = (): string => {
-      return 'mdi-earth'
     }
     
     const loadTeamDetail = async (): Promise<void> => {
@@ -58,13 +51,11 @@ export default defineComponent({
     
     return {
       team,
-      isLoading,
       modalPlayers,
       handleModalUpdate,
       error,
       goBack,
       formatDate,
-      getAreaIcon,
       loadTeamDetail
     }
   }

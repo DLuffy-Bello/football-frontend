@@ -6,8 +6,6 @@ import { useAuthStore } from './stores/auth';
 import { CompetitionDetail } from './components/competition-detail';
 import { Teams } from './components/teams';
 import { TeamDetail } from './components/team-detail';
-import { Players } from './components/players';
-import { PlayerDetail } from './components/player-detail';
 
 
 const routes = [
@@ -47,24 +45,6 @@ const routes = [
       permission: 'view_details_competitions'
 
     }
-  },
-  {
-    path: '/players',
-    name: 'players',
-    component: Players,
-    meta: {
-      requiresAuth: true,
-    }
-  },
-  {
-    path: '/player/:id',
-    name: 'player-detail',
-    component: PlayerDetail,
-    meta: {
-      requiresAuth: true,
-      permission: 'view_details_competitions'
-
-    },
   },
   {
     path: '/login',

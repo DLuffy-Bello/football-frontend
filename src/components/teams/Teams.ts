@@ -62,7 +62,6 @@ export default defineComponent({
       const canViewDetails = ability.can('view_details_teams', 'teams')
       
       if (canViewDetails) {
-        console.log('Team clicked:', team.name)
         teamsStore.setCurrentTeam(team)
         router.push(`/team/${team.id}`)
       } else {

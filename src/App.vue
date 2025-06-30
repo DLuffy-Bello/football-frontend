@@ -63,14 +63,6 @@
           to="/teams"
           v-if="authStore.canViewTeams"
         />
-        <v-list-item
-          min-height="40"
-          title="Players"
-          exact
-          prepend-icon="mdi-account"
-          to="/players"
-          v-if="authStore.canViewPlayers"
-        />
       </v-list>
       <template v-slot:append>
         <div class="pa-2 border-t">
@@ -182,12 +174,6 @@ onUnmounted(() => {
 const handleLogout = async () => {
   await authStore.logout();
   router.push("/login");
-};
-
-const closeDrawerOnMobile = () => {
-  if (mobile.value) {
-    drawer.value = false;
-  }
 };
 </script>
 
